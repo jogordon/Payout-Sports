@@ -1,0 +1,41 @@
+{
+  "name": "payout-sports",
+  "version": "0.0.1",
+  "description": "A fantasy sports (NFL football, etc.) website",
+  "main": "\"node ./bin/www\"",
+  "dependencies": {
+    "angular": "^1.4.1",
+    "body-parser": "^1.13.1",
+    "debug": "^2.2.0",
+    "ejs": "^2.3.2",
+    "express": "^4.13.0",
+    "express-session": "^1.11.3",
+    "mongoose": "^4.0.6",
+    "morgan": "^1.6.0",
+    "nconf": "^0.7.1",
+    "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jogordon/Payout-Sports.git"
+  },
+  "keywords": [
+    "MEAN",
+    "MongoDB",
+    "Express",
+    "Angular",
+    "Node",
+    "Socket.io"
+  ],
+  "author": "John A Gordon (jogordon)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jogordon/Payout-Sports/issues"
+  },
+  "homepage": "https://github.com/jogordon/Payout-Sports#readme"
+}
