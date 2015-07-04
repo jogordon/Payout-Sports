@@ -3,19 +3,21 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var nconf = require('nconf');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var passport = require('passport');
 var session  = require('express-session');
 var mongoose = require('mongoose');
 var app = express();
+var redisstore = require('connect-redis')(session);
 require('./routes/index')(app);
-
-//mongoose.connect('mongodb://teamnull:teamnull1@ds059661.mongolab.com:59661/reddit');
-
 
 //Setup nconf to use (in-order): 1. Command-line, 2. Env vars, 3. file
 nconf.argv().env().file({ file: 'config/config.json' });
+
+//Connect to mongoDB database
+//mongoose.connect(nconf.get("DATABASE");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,10 +27,20 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-console.log(nconf.get("SESSION_SECRET"));
+
 // required for passport
-app.use(session({ secret: nconf.get("SESSION_SECRET") })); // session secret
+app.use(session({ name: 'payoutsports',
+                  store: new redisstore({
+                    host: nconf.get("LOCAL"),
+                    port: nconf.get("REDISPORT"),
+                    prefix:'sess'
+                  }),
+                  resave: false, 
+                  proxy: false,
+                  saveUninitialized: false, 
+                  secret: nconf.get("SESSION_SECRET") }));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
