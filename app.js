@@ -23,7 +23,7 @@ nconf.argv().env().file({ file: 'config/config.json' });
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -40,7 +40,8 @@ app.use(session({ name: 'payoutsports',
                   resave: false, 
                   proxy: false,
                   saveUninitialized: false, 
-                  secret: nconf.get("SESSION_SECRET") }));
+                  secret: nconf.get("SESSION_SECRET") 
+                }));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
