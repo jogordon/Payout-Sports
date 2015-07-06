@@ -1,0 +1,9 @@
+https://thinkster.io/mean-stack-tutorial/
+
+https://hackhands.com/delving-node-js-express-web-framework/
+
+http://expressjs-book.com/index.html%3Fp=128.html    
+
+http://tylermcginnis.com/angularjs-factory-vs-service-vs-provider/
+
+http://clintberry.com/2013/modular-angularjs-application-design/

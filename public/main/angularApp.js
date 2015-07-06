@@ -1,4 +1,4 @@
-var app = angular.module('payout-sports', ['ui.router']);
+var app = angular.module('main', ['ui.router']);
 
 app.config([
   '$stateProvider',
