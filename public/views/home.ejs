@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = "angularApp">
   <head>
     <script src="/main/angularApp.js"></script>
-    <link rel="stylesheet" href="/main/stylesheets/home.css" type="text/css" />
+    <link rel="stylesheet" href="/home/stylesheets/home.css" type="text/css" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   </head>
   <body>
-    <div id="statticker">
+    <div id="statticker" ng-controller="tickerCtrl">
       <div id="outerwrapper">
         <div class="frame" id="sport">
           <div class="window" >
+            {{sport}}
           </div>
         </div>
         <div id="buttonwrapper1">
@@ -53,6 +54,7 @@
         </div>
         <div class="frame" id="position">
           <div class="window" >
+            {{position}}
           </div>
         </div>
         <div id="buttonwrapper2">
@@ -95,6 +97,7 @@
         </div>
         <div class="frame" id="ticker">
           <div class="window" >
+            {{statfeed}}
           </div>
         </div>
       </div>
