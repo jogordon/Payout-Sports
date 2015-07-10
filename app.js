@@ -12,6 +12,7 @@ var mongoose = require('mongoose');
 var app = express();
 var redisstore = require('connect-redis')(session);
 require('./routes/index')(app);
+require('./models/Player');
 
 //Setup nconf to use (in-order): 1. Command-line, 2. Env vars, 3. file
 nconf.argv().env().file({ file: 'config/config.json' });

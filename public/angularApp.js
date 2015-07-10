@@ -11,7 +11,6 @@ angularApp.config([
         views: {
           "home": {
             templateUrl: '/home.html',
-            controller: 'homeCtrl',
             resolve: {
             }
           }

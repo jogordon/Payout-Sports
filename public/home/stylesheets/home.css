@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'ozone';
+  src: url('../../fonts/ozone.woff') format('woff'), url('../../fonts/ozone.ttf') format('truetype');
+}
+
 body {
   height: 1260px;
   margin: 0px;
@@ -36,6 +41,13 @@ body {
   border-radius: 3.0px;
   -webkit-box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,1);
   -moz-box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,1);
+  font-family: ozone, arial;
+  font-size: 29.5px;
+  line-height: 30px;
+  text-align: center;
+  color: rgb(221, 213,0);
+  white-space: nowrap;
+  overflow: hidden;
   box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,1);
   background: #2d2d2d; /* Old browsers */
   background: -moz-linear-gradient(top, #2d2d2d 0%, #303030 50%, #313131 50%, #2d2d2d 100%); /* FF3.6+ */
